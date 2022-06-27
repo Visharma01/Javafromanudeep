@@ -1,0 +1,263 @@
+﻿1. Write a program to find whether a number is Armstrong
+or not.
+An Armstrong number is a positive m-digit number 
+that is equal to the sum of the mth powers of their 
+digits. For Example:
+153: 13 + 53 + 33 = 1 + 125+ 27 = 153
+125: 13 + 23 + 53 = 1 + 8 + 125 = 134 (Not an Armstrong Number)
+1634: 14 + 64 + 34 + 44 = 1 + 1296 + 81 + 256 = 1643
+
+2. Write a java program to print the following pattern
+    *
+   **
+  ***
+ ****
+*****
+
+3. Write a program that prompts the user to input an
+ integer and then outputs the number with the digits
+ reversed. For example, if the input is 12345, the 
+output should be 54321.
+
+4. Write a program to calculate HCF of Two given number.
+
+5. Write a program to find the largest of 4 numbers.
+
+6. Write a program to calculate the sum of following series where n is input by user. 
+  1 + 1/2 + 1/3 + 1/4 + 1/5 +…………1/n 
+
+7. Write a program to check whether a number is prime or not
+
+8. write a program to find the multiplication table of 8.
+
+9. write a program to calculate the area of a rectangle.
+
+10. Write a Java program and compute the sum of the digits of an integer
+
+
+
+programs:
+1.import java.util.Scanner;
+
+  public class ArmstrongNumber {
+ 
+   public static void main(String args[]) {
+  
+    int number = 153;
+   
+    int check, rem, sum = 0;
+  
+    System.out.println("Enter the number to be verified:");
+   
+    Scanner sc = new Scanner(System.in);
+      
+    number = sc.nextInt();
+      
+   check = number;
+    
+   while(check != 0) {
+   
+    rem = check % 10;
+       
+    sum = sum + (rem * rem * rem);
+     
+    check = check / 10;
+  
+    }
+   
+    if(sum == number)
+    
+     System.out.println("Given number is an armstrong number.");
+   
+   else
+    
+     System.out.println("Given number is not an armstrong number.");
+  
+}
+
+}
+
+2.public class LeftTrianglePattern  
+{    
+public static void main(String args[])   
+{     
+int i, j, row = 6;         
+for (i=0; i<row; i++)   
+{     
+for (j=2*(row-i); j>=0; j--)         
+{       
+System.out.print(" ");   
+}   
+//inner loop for columns  
+for (j=0; j<=i; j++ )   
+{        
+System.out.print("* ");   
+}   
+System.out.println();   
+}   
+}   
+}  
+
+3.import java.util.Scanner;  
+  public class LargestNumberExample1  
+{  
+  public static void main(String[] args)   
+{  
+ int a, b, c, largest, temp;    
+Scanner sc = new Scanner(System.in);  
+System.out.println("Enter the first number:");  
+  a = sc.nextInt();  
+System.out.println("Enter the second number:");  
+  b = sc.nextInt();  
+System.out.println("Enter the third number:");  
+  c = sc.nextInt();  
+temp=a>b?a:b;  
+  
+largest=c>temp?c:temp;  
+//prints the largest number  
+System.out.println("The largest number is: "+largest);  
+}  
+}  
+
+5.import java.util.Scanner;
+public class LargestOfFourNumbers 
+{
+   public static void main(String[] args) 
+   {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Please enter first number: ");
+      int number1 = sc.nextInt();
+      System.out.println("Please enter second number: ");
+      int number2 = sc.nextInt();
+      System.out.println("Please enter third number: ");
+      int number3 = sc.nextInt();
+      System.out.println("Please enter fourth number: ");
+      int number4 = sc.nextInt();
+      if(number1 > number2)
+      {
+         if(number1 > number3)
+         {
+            if(number1 > number4)
+            {  
+               System.out.println("Largest of four numbers is: " + number1);
+            }
+            else
+            {
+               System.out.println("Largest of four numbers is: " + number4);
+            }
+         }
+      }
+      else if(number2 > number3)
+      {
+         if(number2 > number4)
+         {
+            System.out.println("Largest of four numbers is: " + number2);
+         }
+         else
+         {
+            System.out.println("Largest of four numbers is: " + number4);
+         }
+      }
+      else if(number3 > number4)
+      {
+         System.out.println("Largest of four numbers is: " + number3);
+      }
+      else
+      {
+         System.out.println("Largest of four numbers is: " + number4);
+      }
+      sc.close();
+   }
+}
+
+6.import java.util.Scanner;
+ 
+public class JavaLoopExcercise
+{
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+ 
+        int number;  
+ 
+        double sum = 0;
+ 
+        System.out.print("Enter number of terms of series : ");
+        number = console.nextInt();
+ 
+        for(int i = 1; i <= number; i++)
+    {
+            sum += 1.0/i;
+    }
+ 
+        System.out.println("sum: " + sum);
+    }  
+}
+
+7.public class PrimeExample{    
+ public static void main(String args[]){    
+  int i,m=0,flag=0;      
+  int n=3;//it is the number to be checked    
+  m=n/2;      
+  if(n==0||n==1){  
+   System.out.println(n+" is not prime number");      
+  }else{  
+   for(i=2;i<=m;i++){      
+    if(n%i==0){      
+     System.out.println(n+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  { System.out.println(n+" is prime number"); }  
+  }//end of else  
+}    
+}   
+
+8.import java.util.Scanner;
+public class Multiplication_Table 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+	System.out.print("Enter number:");        
+	int n=s.nextInt();
+        for(int i=1; i <= 10; i++)
+        {
+            System.out.println(n+" * "+i+" = "+n*i);
+        }
+    }
+}
+
+9.public class rectangle{  
+    public static void main(String args[])  
+    {  
+    int width=5;  
+    int height=10;  
+    int area=width*height;  
+        System.out.println("Area of rectangle="+area);  
+     }  
+}  
+
+10.import java.util.Scanner;  
+public class SumOfDigitsExample1   
+{  
+public static void main(String args[])  
+{  
+int number, digit, sum = 0;  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter the number: ");  
+number = sc.nextInt();  
+while(number > 0)  
+{  
+//finds the last digit of the given number    
+digit = number % 10;  
+//adds last digit to the variable sum  
+sum = sum + digit;  
+//removes the last digit from the number  
+number = number / 10;  
+}  
+//prints the result  
+System.out.println("Sum of Digits: "+sum);  
+}  
+}  
