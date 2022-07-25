@@ -1,0 +1,169 @@
+1.Declare a class student 
+Declare the attributes of the student Class as below 
+*Name
+*Id
+*Gender
+*Standard
+Set the values of the attributes from the user and display it to the end user 
+PROGRAMS:
+package com.capgemini;
+import java.util.Random;
+import java.util.Scanner;
+class RockPaperGam {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        int cmp_choice = rand.nextInt(3)+1;
+        int no_choices = 0;
+        int t_chances = 5;
+	int C_point = 0;
+	int P_point = 0;
+        while (no_choices<t_chances){
+	            System.out.println("Enter Rock, Paper, Scissor as 1, 2, 3 respectively:");
+	            byte user_input = sc.nextByte();
+	
+	            if(user_input==cmp_choice){
+	            	System.out.println("It is a Tie hence no addition of score");
+		    }
+	            else if (user_input<=3 && user_input>=1) {
+	                // Computer inputs 3
+	                if (user_input==1 && cmp_choice==3){
+	                    System.out.println("Congrats You Won!!");
+			    C_point = (int)C_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	                
+	                else if (user_input==2 && cmp_choice==3){
+	                    System.out.println("Alas you lost!!");
+			    P_point = (int)P_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	
+	      
+	                // Computer inputs 2
+	                if (user_input==1 && cmp_choice==2){
+	                    System.out.println("Alas you lost!!");
+			    P_point = (int)P_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	
+	
+	                else if (user_input==3 && cmp_choice==2){
+	                    System.out.println("Congrats You Won!!");
+			    C_point = (int)C_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	
+	                // Computer inputs 1
+	                else if (user_input==2 && cmp_choice==1){
+	                    System.out.println("Alas you lost!!");
+			    P_point = (int)P_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	
+	                else if (user_input==3 && cmp_choice==1){
+	                    System.out.println("Congrats You Won!!");
+			    C_point = (int)C_point + 1;
+			    System.out.println("Your Score is" + C_point + "Computer score is" + P_point);
+	                    System.out.println("You Entered" + user_input +"and the Computer choice was"+ cmp_choice);
+	                }
+	            }
+	            else {
+	                System.out.println("Please Enter Right Input.");
+	            }
+	            no_choices ++;
+	            int left = t_chances - no_choices;
+	            System.out.println("You are left with only "+left+" chances");
+	        }
+		System.out.println("Game Over");
+		System.out.println("Scoreboard");
+		if(C_point>P_point){
+		    System.out.println("You win the game");
+		    System.out.println("Your Final Score is" + C_point + "Computer Final score is" + P_point);
+		}
+		else if(C_point<P_point){
+		    System.out.println("You loss the game");
+		    System.out.println("Your Final Score is" + C_point + "Computer Final score is" + P_point);
+		}
+		else if(C_point==P_point){
+		    System.out.println("Tie");
+		    System.out.println("Your Final Score is" + C_point + "Computer Final score is" + P_point);
+		}
+		sc.close();
+    }
+    
+}
+
+
+
+2.Create a program to display the transpose of a given matrix 
+*Hint(Tranpose is Rows to be displayed as columns and Vice-Versa)
+PROGRAMS:
+package com.anudip;
+import java.util.Random;
+import java.util.Scanner;
+public class GameRockPaper {
+
+		public static void main(String[] args) {
+			System.out.println("Welcome to Rock:Paper:Scissor Game");
+			System.out.println("enter 1 : ROCK \t2:PAPER\t 3:SCISSOR");
+			Scanner sc=new Scanner(System.in);
+			Random rd=new Random();
+			int n=1;
+			int count=0;
+			int t = 0;
+			while(n<=3){
+			System.out.println("Your turn enter number");
+			int user_input=sc.nextInt();
+			switch(user_input){
+				case 1:
+				{ System.out.println("You select Rock");
+				}break;
+				
+				case 2:{System.out.println("You select Paper");
+				}break;
+				case 3:
+				{
+					System.out.println("You select Scissor");
+				}break;
+			}
+			System.out.println("Computer's turn ");
+			int comp_input=rd.nextInt(3)+1;
+			switch(comp_input){
+				case 1:
+				{ System.out.println("Computer select Rock");
+				}break;
+				
+				case 2: {
+					System.out.println("Computer select Paper");
+				}break;
+				case 3:{
+					 System.out.println("Computer select Scissor");
+				}break;
+			}
+			if(user_input==comp_input){
+				System.out.println("Draw match");
+			}
+			else if((user_input==1&& comp_input==3)||(user_input==2 && comp_input==1)||(user_input==3 && comp_input==2))
+			{
+				System.out.println("Congratulations! You win the match");
+			count++;
+	}
+	else {
+			System.out.println("Computer Won the round");
+			t++;
+			}		
+			
+		n++;	
+		
+		}	
+			System.out.println("Final Score your's "+count+ "computer's Score "+t);	
+			
+			}
+		
+	} 
