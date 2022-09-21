@@ -1,0 +1,29 @@
+package com.anudip;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import com.anudip.entity.Employee;
+
+public class App 
+{
+    @SuppressWarnings("deprecation")
+	public static void main( String[] args )
+    {
+       SessionFactory sf = new Configuration().configure().buildSessionFactory();
+       Session s = sf.openSession();
+       Employee e = new Employee();
+       e.setEname("Vishal");
+       e.setAddr("Chembur");
+       e.setEphone(998741517);
+       e.setEsalary(65000);
+       s.save(e);
+       Transaction t = s.beginTransaction();
+       t.commit();
+       System.out.println("done");
+       
+       
+       
+    }
+}
