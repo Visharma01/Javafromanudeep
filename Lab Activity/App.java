@@ -8,6 +8,6 @@ public static void main (String [] args )
 {
 UniversitytDaoImpl ddao = new UniversitytDaoImpl();
 ddao.addUniversity();
-
+ddao.fetchUniversity();
 }	
 }
