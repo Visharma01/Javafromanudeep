@@ -70,7 +70,23 @@ public class UniversitytDaoImpl implements UniversityDao {
 
 
 	public void fetchUniversity() {
-		// TODO Auto-generated method stub
+		@SuppressWarnings({ "deprecation", "rawtypes" })
+		Query q = (Query) session.createQuery("from University");
+		
+		//list with Citizen Entity
+		@SuppressWarnings("unchecked")
+		List<University> a11 = q.getResultList();
+		
+		//Traverse
+		Iterator<University> itr = a11.iterator();
+		while(itr.hasNext()) {
+		University c1 = itr.next();
+		@SuppressWarnings("unused")
+		List<Student> a23 =  c1.getStudent();
+System.out.println(c1.getUid() + " " +c1.getUname() +" "+c1.getUlocation() + " "+c1.getUemail() + " " + c1.getStudent() );
+
+	
+		
 		
 	}
 
